@@ -1,0 +1,161 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Organic Farming Topics</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- Reset & Base ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      font-family: "Montserrat", sans-serif;
+      background: linear-gradient(135deg,#f0fff4,#fff9f0 40%,#e0ffe0);
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #2a5d38;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    /* ---------- Card Grid ---------- */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 30px;
+      max-width: 1000px;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .topic-card {
+      background: #fff;
+      border-radius: 20px 50px 20px 50px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      padding: 25px 20px;
+      text-align: center;
+      transition: transform .35s ease, box-shadow .35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .topic-card::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(120deg,rgba(255,255,255,0.0),rgba(255,255,255,0.15));
+      pointer-events:none;
+      transition: opacity .4s;
+      opacity:0;
+    }
+    .topic-card:hover::before { opacity:1; }
+    .topic-card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    }
+
+    .topic-card h2 {
+      font-size: 1.3rem;
+      color: #136f63;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .topic-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    /* ---------- Button ---------- */
+    .topic-card a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: linear-gradient(45deg,#20c997,#0abde3);
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 30px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+      transition: background 0.3s, transform 0.2s;
+    }
+    .topic-card a:hover {
+      background: linear-gradient(45deg,#0abde3,#20c997);
+      transform: scale(1.05);
+    }
+
+    /* ---------- Themed Background Colors for Each Topic ---------- */
+    .OrganicFarming      { background: linear-gradient(160deg,#e6f9e6,#ffffff 60%); }
+    .OrganicInSchools    { background: linear-gradient(160deg,#f9fbe7,#ffffff 60%); }
+    .PrinciplesOrganic   { background: linear-gradient(160deg,#e0f7fa,#ffffff 60%); }
+    .ImpactsOrganic      { background: linear-gradient(160deg,#fce4ec,#ffffff 60%); }
+    .MyActivity          { background: linear-gradient(160deg,#ede7f6,#ffffff 60%); }
+
+    /* ---------- Fade-in Animation ---------- */
+    .topic-card {
+      opacity:0;
+      transform: translateY(20px);
+      animation: fadeUp 0.8s forwards;
+    }
+    .topic-card:nth-child(1){ animation-delay:.1s;}
+    .topic-card:nth-child(2){ animation-delay:.25s;}
+    .topic-card:nth-child(3){ animation-delay:.4s;}
+    .topic-card:nth-child(4){ animation-delay:.55s;}
+    .topic-card:nth-child(5){ animation-delay:.7s;}
+
+    @keyframes fadeUp {
+      to { opacity:1; transform:translateY(0);}
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1> Organic Farming Topics</h1>
+
+  <div class="topics-grid">
+    <div class="topic-card OrganicFarming">
+      <h2>Organic Farming</h2>
+      <a href="Organic.html">Read more</a>
+    </div>
+
+    <div class="topic-card OrganicInSchools">
+      <h2>Organic Farming in Schools</h2>
+      <a href="Schools.html">Read more</a>
+    </div>
+
+    <div class="topic-card PrinciplesOrganic">
+      <h2>Principles of Organic Farming</h2>
+      <a href="principles.html">Read more</a>
+    </div>
+
+    <div class="topic-card ImpactsOrganic">
+      <h2>Impacts of Organic Farming</h2>
+      <a href="impact.html">Read more</a>
+    </div>
+
+    <div class="topic-card MyActivity">
+      <h2>My Activity</h2>
+      <p>View our project’s journey, images, reports and volunteer experiences.</p>
+      <a href="MyActivity.html">Read more</a>
+    </div>
+  </div>
+
+</body>
+</html>
+
